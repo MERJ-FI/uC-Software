@@ -1,1 +1,4 @@
-Hola Miguel, he recibido y modificado de nuevo
+Hola Miguel, he recibido y modificado de nuevo. 
+
+Editado de modulo.
+
