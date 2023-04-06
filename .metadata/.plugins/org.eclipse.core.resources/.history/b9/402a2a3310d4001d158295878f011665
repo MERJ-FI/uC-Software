@@ -1,0 +1,9 @@
+#include <CargaSecundaria/Core/clock_mgr.h>
+
+
+void SystemClock_Config(void)
+{
+
+}
+
+

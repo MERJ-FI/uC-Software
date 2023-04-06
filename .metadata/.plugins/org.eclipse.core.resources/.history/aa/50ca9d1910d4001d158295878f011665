@@ -1,0 +1,13 @@
+/*
+ * clock_mgr.h
+ *
+ *  Created on: Apr 5, 2023
+ *      Author: mgnar
+ */
+
+#ifndef INC_CLOCK_MGR_H_
+#define INC_CLOCK_MGR_H_
+
+
+
+#endif /* INC_CLOCK_MGR_H_ */
