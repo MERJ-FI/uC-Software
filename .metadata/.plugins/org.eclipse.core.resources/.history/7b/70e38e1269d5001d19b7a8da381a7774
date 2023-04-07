@@ -1,0 +1,16 @@
+/*
+ * GPIO.c
+ *
+ *  Created on: 6 abr 2023
+ *      Author: mgnar
+ */
+#include "GPIO.h"
+//#include "stm32f1xx_hal.h"
+
+GPIO_InitTypeDef LedPin = {0};
+
+void GPIOInit (void)
+{
+	// Clock net
+	__HAL_RCC_GPIOA_CLK_ENABLE();
+}

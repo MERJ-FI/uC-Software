@@ -1,10 +1,17 @@
-10:53:16 **** Incremental Build of configuration Debug for project CargaSecundaria ****
+11:51:31 **** Incremental Build of configuration Debug for project CargaSecundaria ****
 make -j4 all 
+arm-none-eabi-gcc "../Core/Src/GPIO.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/mgnar/Desktop/CANSAT/uC-Software/CargaSecundaria" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/GPIO.d" -MT"Core/Src/GPIO.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/GPIO.o"
+arm-none-eabi-gcc -o "CargaSecundaria.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\mgnar\Desktop\CANSAT\uC-Software\CargaSecundaria\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CargaSecundaria.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CargaSecundaria.elf
+ 
 arm-none-eabi-size   CargaSecundaria.elf 
+arm-none-eabi-objdump -h -S  CargaSecundaria.elf  > "CargaSecundaria.list"
    text	   data	    bss	    dec	    hex	filename
-   3692	     20	   1572	   5284	   14a4	CargaSecundaria.elf
+   4716	     20	   1684	   6420	   1914	CargaSecundaria.elf
 Finished building: default.size.stdout
  
+Finished building: CargaSecundaria.list
+ 
 
-10:53:17 Build Finished. 0 errors, 0 warnings. (took 854ms)
+11:51:35 Build Finished. 0 errors, 0 warnings. (took 4s.30ms)
 

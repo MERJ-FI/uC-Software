@@ -9,7 +9,7 @@
 
 // Peripheral pins.
 GPIO_InitTypeDef SPI =
-{ 0 }, USART2_a =
+{ 0 }, USART2 =
 { 0 };
 // Individual pins.
 GPIO_InitTypeDef IRQ =
@@ -34,12 +34,12 @@ void GPIOInit(void)
 	HAL_GPIO_Init(GPIOA, &SPI);
 
 	// UART pins configuration.
-	USART2_a.Pin = GPIO_PIN_2 | GPIO_PIN_3;
-	USART2_a.Mode = GPIO_MODE_AF_PP;
+	USART2.Pin = GPIO_PIN_2 | GPIO_PIN_3;
+	USART2.Mode = GPIO_MODE_AF_PP;
 	//ToDo: Add AF
 	//SPI.Alternate = GPIO_AF5_SPI1;
 	// Init in the selected port with the above config.
-	HAL_GPIO_Init(GPIOA, &USART2_a);
+	HAL_GPIO_Init(GPIOA, &USART2);
 
 	// IRQ pin configuration.
 	IRQ.Pin = GPIO_PIN_0;

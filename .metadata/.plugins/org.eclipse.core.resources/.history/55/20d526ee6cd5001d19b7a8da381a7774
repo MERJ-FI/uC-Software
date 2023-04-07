@@ -50,7 +50,6 @@ void Init(void)
 		Error_Handler();
 	}
 
-	// Init all used GPIOs.
 	GPIOInit();
 
 }

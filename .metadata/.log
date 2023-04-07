@@ -520,3 +520,18 @@ java.lang.Exception: File: C:\Users\mgnar\Desktop\CANSAT\uC-Software\Adquisicion
 	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:915)
 	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1257)
 	at java.base/java.lang.Thread.run(Thread.java:829)
+!SESSION 2023-04-07 11:03:25.912 -----------------------------------------------
+eclipse.buildId=Version 1.10.0
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_MX
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-04-07 11:03:40.177
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-04-07 11:03:40.311
+!MESSAGE Log4j initialized with config file C:\Users\mgnar\Desktop\CANSAT\uC-Software\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-04-07 11:03:51.437
+!MESSAGE Started RMI Server, listening on port 41337
