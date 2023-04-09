@@ -1,14 +1,15 @@
-11:51:31 **** Incremental Build of configuration Debug for project CargaSecundaria ****
+11:01:49 **** Incremental Build of configuration Debug for project Adquisicion ****
 make -j4 all 
-arm-none-eabi-gcc "../Core/Src/GPIO.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/mgnar/Desktop/CANSAT/uC-Software/CargaSecundaria" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/GPIO.d" -MT"Core/Src/GPIO.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/GPIO.o"
-arm-none-eabi-gcc -o "CargaSecundaria.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\mgnar\Desktop\CANSAT\uC-Software\CargaSecundaria\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CargaSecundaria.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CargaSecundaria.elf
+arm-none-eabi-gcc "../Core/Src/GPIO.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/GPIO.d" -MT"Core/Src/GPIO.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/GPIO.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Adquisicion.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mgnar\Desktop\CANSAT\uC-Software\Adquisicion\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Adquisicion.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Adquisicion.elf
  
-arm-none-eabi-size   CargaSecundaria.elf 
-arm-none-eabi-objdump -h -S  CargaSecundaria.elf  > "CargaSecundaria.list"
+arm-none-eabi-size   Adquisicion.elf 
+arm-none-eabi-objdump -h -S  Adquisicion.elf  > "Adquisicion.list"
    text	   data	    bss	    dec	    hex	filename
-   4716	     20	   1684	   6420	   1914	CargaSecundaria.elf
+   5892	     20	   1772	   7684	   1e04	Adquisicion.elf
 Finished building: default.size.stdout
  
-Finished building: CargaSecundaria.list
+Finished building: Adquisicion.list
  

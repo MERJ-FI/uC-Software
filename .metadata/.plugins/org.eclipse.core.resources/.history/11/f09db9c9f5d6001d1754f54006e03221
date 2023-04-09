@@ -46,47 +46,32 @@ void GPIOInit(void)
 	HAL_GPIO_Init(GPIOB, &SPI_berry);
 
 	// Berry's I2C pins configuration.
-	I2C_berry.Pin = GPIO_PIN_6 | GPIO_PIN_7;
 	I2C_berry.Mode = GPIO_MODE_AF_OD;
+	I2C_berry.Pin = GPIO_PIN_6 | GPIO_PIN_7;
 	I2C_berry.Alternate = GPIO_AF4_I2C1;
 	//i2c_pin.Pull=GPIO_PULLUP;
 	HAL_GPIO_Init(GPIOB, &I2C_berry);
 
+
 	// IRQ pin configuration.
-	IRQ.Pin = GPIO_PIN_2;
+	IRQ.Pin = GPIO_PIN_0;
 	IRQ.Mode = GPIO_MODE_INPUT;
-	HAL_GPIO_Init(GPIOA, &IRQ);
-
-	// INT1 pin configuration.
-	INT1.Pin = GPIO_PIN_9;
-	INT1.Mode = GPIO_MODE_OUTPUT_PP;
-	HAL_GPIO_Init(GPIOA, &INT1);
-
-	// INT2 pin configuration.
-	INT2.Pin = GPIO_PIN_8;
-	INT2.Mode = GPIO_MODE_OUTPUT_PP;
-	HAL_GPIO_Init(GPIOA, &INT2);
+	HAL_GPIO_Init(GPIOB, &IRQ);
 
 	// CE pin configuration.
 	CE.Pin = GPIO_PIN_1;
 	CE.Mode = GPIO_MODE_OUTPUT_PP;
-	HAL_GPIO_Init(GPIOA, &CE);
+	HAL_GPIO_Init(GPIOB, &CE);
 
 	// STATUS pin configuration.
-	STATUS.Pin = GPIO_PIN_3;
+	STATUS.Pin = GPIO_PIN_10;
 	STATUS.Mode = GPIO_MODE_OUTPUT_PP;
-	HAL_GPIO_Init(GPIOA, &STATUS);
+	HAL_GPIO_Init(GPIOB, &STATUS);
 
-	// General purpose OUT1 pin configuration.
-	OUT1.Pin = GPIO_PIN_3;
-	OUT1.Mode = GPIO_MODE_OUTPUT_PP;
-	HAL_GPIO_Init(GPIOB, &OUT1);
-
-	// SERVO pin configuration.
-	SERVO.Pin = GPIO_PIN_5;
-	SERVO.Mode = GPIO_MODE_AF_PP;
-	SERVO.Alternate = GPIO_AF2_TIM3;
-	HAL_GPIO_Init(GPIOB, &SERVO);
+	// PPS pin configuration.
+	PPS.Pin = GPIO_PIN_1;
+	PPS.Mode = GPIO_MODE_INPUT;
+	HAL_GPIO_Init(GPIOA, &PPS);
 
 	// VBAT pin configuration.
 	VBAT.Pin = GPIO_PIN_0;

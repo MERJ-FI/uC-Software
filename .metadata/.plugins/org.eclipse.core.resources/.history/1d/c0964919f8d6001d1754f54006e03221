@@ -58,25 +58,25 @@ void GPIOInit(void)
 	//i2c_pin.Pull=GPIO_PULLUP;
 	HAL_GPIO_Init(GPIOB, &UART_interface);
 
-	// Primary IRQ pin configuration.
-	IRQ_P.Pin = GPIO_PIN_2;
-	IRQ_P.Mode = GPIO_MODE_INPUT;
-	HAL_GPIO_Init(GPIOA, &IRQ_P);
+	// IRQ pin configuration.
+	IRQ.Pin = GPIO_PIN_2;
+	IRQ.Mode = GPIO_MODE_INPUT;
+	HAL_GPIO_Init(GPIOA, &IRQ);
 
-	// Secondary IRQ pin configuration.
-	IRQ_S.Pin = GPIO_PIN_8;
-	IRQ_S.Mode = GPIO_MODE_INPUT;
-	HAL_GPIO_Init(GPIOA, &IRQ_S);
+	// INT1 pin configuration.
+	INT1.Pin = GPIO_PIN_9;
+	INT1.Mode = GPIO_MODE_OUTPUT_PP;
+	HAL_GPIO_Init(GPIOA, &INT1);
 
-	// Primary CE pin configuration.
-	CE_P.Pin = GPIO_PIN_1;
-	CE_P.Mode = GPIO_MODE_OUTPUT_PP;
-	HAL_GPIO_Init(GPIOA, &CE_P);
+	// INT2 pin configuration.
+	INT2.Pin = GPIO_PIN_8;
+	INT2.Mode = GPIO_MODE_OUTPUT_PP;
+	HAL_GPIO_Init(GPIOA, &INT2);
 
-	// Secondary CE pin configuration.
-	CE_S.Pin = GPIO_PIN_9;
-	CE_S.Mode = GPIO_MODE_OUTPUT_PP;
-	HAL_GPIO_Init(GPIOA, &CE_S);
+	// CE pin configuration.
+	CE.Pin = GPIO_PIN_1;
+	CE.Mode = GPIO_MODE_OUTPUT_PP;
+	HAL_GPIO_Init(GPIOA, &CE);
 
 	// STATUS pin configuration.
 	STATUS.Pin = GPIO_PIN_3;
@@ -84,9 +84,19 @@ void GPIOInit(void)
 	HAL_GPIO_Init(GPIOA, &STATUS);
 
 	// General purpose OUT1 pin configuration.
-	OUT1.Pin = GPIO_PIN_5;
+	OUT1.Pin = GPIO_PIN_3;
 	OUT1.Mode = GPIO_MODE_OUTPUT_PP;
 	HAL_GPIO_Init(GPIOB, &OUT1);
 
+	// SERVO pin configuration.
+	SERVO.Pin = GPIO_PIN_5;
+	SERVO.Mode = GPIO_MODE_AF_PP;
+	SERVO.Alternate = GPIO_AF2_TIM3;
+	HAL_GPIO_Init(GPIOB, &SERVO);
+
+	// VBAT pin configuration.
+	VBAT.Pin = GPIO_PIN_0;
+	VBAT.Mode = GPIO_MODE_ANALOG;
+	HAL_GPIO_Init(GPIOA, &VBAT);
 
 }

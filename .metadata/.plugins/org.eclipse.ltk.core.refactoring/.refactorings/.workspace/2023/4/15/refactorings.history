@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 4 resources" deleteContents="false" description="Delete 4 resources" element1="/Adquisicion/Core/Src/Clock.h" element2="/Adquisicion/Core/Src/Counter_DataTypes.h" element3="/Adquisicion/Core/Src/Counter.h" element4="/Adquisicion/Core/Src/GPIO.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="4" stamp="1681058777285"/>
+</session>

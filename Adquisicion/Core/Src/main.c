@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "clock.h"
+#include "gpio.h"
 
 void Init(void);
 
@@ -31,7 +32,6 @@ int main(void)
 	}
 
 }
-
 
 void Init(void)
 {
@@ -48,6 +48,8 @@ void Init(void)
 		Error_Handler();
 	}
 
+	// Init GPIOs.
+	GPIOInit();
 }
 
 /**

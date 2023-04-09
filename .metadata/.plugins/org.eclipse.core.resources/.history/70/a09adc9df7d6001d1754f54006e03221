@@ -9,19 +9,19 @@
 #include "stm32f4xx_hal.h"
 
 // Peripheral pins.
-GPIO_InitTypeDef SPI_berry =
-{ 0 }, SPI_antena =
-{ 0 }, I2C_berry =
+GPIO_InitTypeDef SPI_primary =
+{ 0 }, SPI_secondary =
+{ 0 }, USB_interface =
+{ 0 }, UART_interface =
 { 0 };
 
 // Individual pins.
-GPIO_InitTypeDef IRQ =
-{ 0 }, INT1 =
-{ 0 }, INT2 =
-{ 0 }, CE =
+GPIO_InitTypeDef IRQ_P =
+{ 0 }, IRQ_S =
+{ 0 }, CE_P =
+{ 0 }, CE_S =
 { 0 }, VBAT =
 { 0 }, OUT1 =
-{ 0 }, SERVO =
 { 0 }, STATUS =
 { 0 };
 
