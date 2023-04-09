@@ -1,18 +1,17 @@
-11:01:49 **** Incremental Build of configuration Debug for project Adquisicion ****
+14:24:40 **** Incremental Build of configuration Debug for project Adquisicion ****
 make -j4 all 
-arm-none-eabi-gcc "../Core/Src/GPIO.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/GPIO.d" -MT"Core/Src/GPIO.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/GPIO.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Services/Inc -I../Applications/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "Adquisicion.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mgnar\Desktop\CANSAT\uC-Software\Adquisicion\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Adquisicion.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: Adquisicion.elf
  
 arm-none-eabi-size   Adquisicion.elf 
 arm-none-eabi-objdump -h -S  Adquisicion.elf  > "Adquisicion.list"
    text	   data	    bss	    dec	    hex	filename
-   5892	     20	   1772	   7684	   1e04	Adquisicion.elf
+   8200	     68	   1868	  10136	   2798	Adquisicion.elf
 Finished building: default.size.stdout
  
 Finished building: Adquisicion.list
  
 
-11:01:54 Build Finished. 0 errors, 0 warnings. (took 4s.68ms)
+14:24:42 Build Finished. 0 errors, 0 warnings. (took 1s.885ms)
 

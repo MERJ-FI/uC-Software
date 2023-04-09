@@ -1,0 +1,32 @@
+/*
+ * Tasks.c
+ *
+ *  Created on: 6 abr 2023
+ *      Author: mgnar
+ *      Tasks are configured in Tasks.h
+ */
+
+#include "stm32f4xx_hal.h"
+#include "Tasks.h"
+#include "Time.h"
+
+static volatile unsigned int idle_executed = 0;
+static volatile float timeLapse = 0;
+
+void Idle_Task (void)
+{
+  idle_executed++;
+
+  // Return the time since channel started in milliseconds.
+  timeLapse = TIME_GetTimeSinceChannelStarted (0u);
+
+  // Restart the execution of the tasks.
+  TIME_StopChannel (0u);
+  TIME_StartChannel (0u);
+
+}
+
+void TaskInit (void)
+{
+  SchM_Task_Create (SCHM_TASKID_IDLE, SCHM_MASK_IDLE, SCHM_OFFSET_IDLE, SCHM_TASK_STATE_SUSPENDED, Idle_Task);
+}

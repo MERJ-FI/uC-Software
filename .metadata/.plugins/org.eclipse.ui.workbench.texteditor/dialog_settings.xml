@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="HAL_TIM_IRQHandle"/>
 		<list key="findhistory">
+			<item value="HAL_TIM_IRQHandle"/>
+			<item value="#include &quot;stm32f4xx_hal_tim.h&quot;"/>
 			<item value="RCC_PLLP_Clock_Divider"/>
 			<item value="/* USER CODE BEGIN Header */"/>
 		</list>

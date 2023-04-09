@@ -1,0 +1,12 @@
+/*
+ * Counter.c
+ *
+ *  Created on: 6 abr 2023
+ *      Author: mgnar
+ */
+
+#include "Counter.h"
+#include "stm32f4xx_hal.h"
+
+
+

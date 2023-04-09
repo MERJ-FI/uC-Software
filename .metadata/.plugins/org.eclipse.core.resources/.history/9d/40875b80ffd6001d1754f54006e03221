@@ -1,0 +1,60 @@
+/*
+ * Counter.c
+ *
+ *  Created on: 6 abr 2023
+ *      Author: mgnar
+ */
+
+#include "Counter.h"
+#include "stm32f4xx_hal.h"
+
+TIM_HandleTypeDef HTim1 ={0};
+
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	// Interrupción cada segundo mediante TIM3.
+
+
+	if(FlagTimer1s == 1)
+		CuentasSolenoide++;
+
+	if(MSegs == 2)
+	{
+		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_1);
+		MSegs = 0;
+	}
+	else
+		MSegs++;
+
+
+}
+
+void TIM1_IRQHandler(void)
+{
+	HAL_TIM_IRQHandler(&HTim3);
+}
+
+
+
+void TIM1Init(void)
+{
+	//Habilitar señales de reloj
+	__HAL_RCC_TIM1_CLK_ENABLE();
+
+
+	//Configuración de alto nivel
+	HTim1.Instance = TIM3;
+	HTim1.Init.Prescaler = 9999; // Ck_CNT = Ck_PSC / (1 + Preescaler)
+	HTim1.Init.Period = 4999; // Freq_int = Ck_CNT / (1 + Period)
+
+	//Habilitar la interrupción
+	HAL_NVIC_SetPriority(TIM3_IRQn, 0, 10);
+	HAL_NVIC_EnableIRQ(TIM3_IRQn);
+
+	HAL_TIM_Base_Init(&HTim3);
+	HAL_TIM_Base_Start_IT(&HTim3);
+
+
+}
+

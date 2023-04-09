@@ -20,6 +20,8 @@
 #include "main.h"
 #include "clock.h"
 #include "gpio.h"
+#include "Scheduler.h"
+#include "Tasks.h"
 
 void Init(void);
 
@@ -52,6 +54,15 @@ void Init(void)
 
 	// Init all used GPIOs.
 	GPIOInit();
+
+	// Initialize tasks module
+	TaskInit();
+
+	// Init scheduler parameters
+	SchM_Init();
+
+	// Start the scheduler
+	SchM_Start();
 
 }
 
