@@ -1,0 +1,44 @@
+/*
+ * Tasks.c
+ *
+ *  Created on: 6 abr 2023
+ *      Author: mgnar
+ *      Tasks are configured in Tasks.h
+ */
+
+#include "stm32f4xx_hal.h"
+#include "Tasks.h"
+#include "Time.h"
+#include "Scheduler.h"
+
+int i = 0;
+
+void Idle_Task(void)
+{
+
+	//STATUS PIN, need to manually input.
+	//HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_3);
+
+	if (i == 0)
+	{
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_3, 1);
+	}
+	else
+	{
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_3, 0);
+	}
+
+	//STATUS PIN, need to manually input.
+
+
+	// Restart the execution of the tasks.
+	TIME_StopChannel(0u);
+	TIME_StartChannel(0u);
+
+}
+
+void TaskInit(void)
+{
+	SchM_Task_Create(SCHM_TASKID_IDLE, SCHM_MASK_IDLE, SCHM_OFFSET_IDLE,
+			SCHM_TASK_STATE_SUSPENDED, Idle_Task);
+}

@@ -1,0 +1,25 @@
+2023-04-17 18:37:37,533 [INFO] Activator:176 - 
+
+
+2023-04-17 18:37:37,545 [INFO] Activator:177 - !SESSION log4j initialized
+2023-04-17 18:37:48,014 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2023-04-17 18:38:16,003 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2023-04-17 18:38:16,004 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: Defaulting to no-operation (NOP) logger implementation
+2023-04-17 18:38:16,008 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2023-04-17 18:39:29,028 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
+2023-04-17 18:39:29,029 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
+2023-04-17 18:39:29,030 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
+2023-04-17 18:41:04,763 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
+2023-04-17 18:41:04,764 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
+2023-04-17 18:41:04,765 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
+2023-04-17 18:41:32,297 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
+2023-04-17 18:41:32,299 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
+2023-04-17 18:41:32,300 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
+2023-04-17 20:23:32,140 [INFO] Activator:176 - 
+
+
+2023-04-17 20:23:32,144 [INFO] Activator:177 - !SESSION log4j initialized
+2023-04-17 20:23:48,993 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2023-04-17 20:24:16,081 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2023-04-17 20:24:16,087 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: Defaulting to no-operation (NOP) logger implementation
+2023-04-17 20:24:16,097 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.

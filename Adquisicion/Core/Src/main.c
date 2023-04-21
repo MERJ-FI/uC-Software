@@ -23,24 +23,23 @@
 #include "Scheduler.h"
 #include "Tasks.h"
 
+
 void Init(void);
 
 int main(void)
 {
 	Init();
-	while (1)
-	{
+	//while (1)
 
-	}
 
 }
+
 
 void Init(void)
 {
 	uint8_t error = 0;
 
-	// Init HAL mechanism.
-	HAL_Init();
+
 
 	// Init clock peripheral.
 	error = SystemClock_Config();
@@ -50,18 +49,26 @@ void Init(void)
 		Error_Handler();
 	}
 
+	// Init HAL mechanism.
+		HAL_Init();
+
 	// Init GPIOs.
 	GPIOInit();
 
+
 	// Initialize tasks module
+
 	TaskInit();
 
+
 	// Init scheduler parameters
+
 	SchM_Init();
 
 	// Start the scheduler
 	SchM_Start();
 }
+
 
 /**
  * @brief  This function is executed in case of error occurrence.
@@ -74,6 +81,7 @@ void Error_Handler(void)
 	__disable_irq();
 	while (1)
 	{
+
 	}
 	/* USER CODE END Error_Handler_Debug */
 }

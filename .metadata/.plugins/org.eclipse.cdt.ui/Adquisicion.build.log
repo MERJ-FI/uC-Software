@@ -1,17 +1,17 @@
-14:24:40 **** Incremental Build of configuration Debug for project Adquisicion ****
+21:17:01 **** Incremental Build of configuration Debug for project Adquisicion ****
 make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Services/Inc -I../Applications/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "Adquisicion.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mgnar\Desktop\CANSAT\uC-Software\Adquisicion\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Adquisicion.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-gcc "../Core/Src/Counter.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Services/Inc -I../Applications/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Counter.d" -MT"Core/Src/Counter.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Counter.o"
+arm-none-eabi-gcc -o "Adquisicion.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\narva\OneDrive\Escritorio\CANSAT\uC-Software\Adquisicion\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Adquisicion.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: Adquisicion.elf
  
 arm-none-eabi-size   Adquisicion.elf 
 arm-none-eabi-objdump -h -S  Adquisicion.elf  > "Adquisicion.list"
    text	   data	    bss	    dec	    hex	filename
-   8200	     68	   1868	  10136	   2798	Adquisicion.elf
+  10140	     68	   1892	  12100	   2f44	Adquisicion.elf
 Finished building: default.size.stdout
  
 Finished building: Adquisicion.list
  
 
-14:24:42 Build Finished. 0 errors, 0 warnings. (took 1s.885ms)
+21:17:03 Build Finished. 0 errors, 0 warnings. (took 1s.991ms)
 

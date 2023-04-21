@@ -13,22 +13,22 @@ TIM_HandleTypeDef HTim2 =
 static CM_CallbackFunction Callback;
 static volatile unsigned int CounterVal = 0;
 
-void TIM2_IRQHandler(void)
-{
-	HAL_TIM_IRQHandler(&HTim2);
-}
+
 
 unsigned int CM_GetCounter(void)
 {
 	return CounterVal;
 }
 
+void TIM2_IRQHandler(void)
+{
 
+	HAL_TIM_IRQHandler(&HTim2);
+}
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	// Interrupt every 1us.
-
+	// Interrupt every 500us.
 	// Count increase
 	CounterVal++;
 
@@ -37,6 +37,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 }
 
+
 void CM_Init(void)
 {
 	// Enable clock net for timer 2.
@@ -44,13 +45,14 @@ void CM_Init(void)
 
 	// Config tim 2 for interrupts.
 	HTim2.Instance = TIM2;
-	HTim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-	HTim2.Init.Prescaler = 9; // Ck_CNT = (Clock 100/2) / (1 + Preescaler)
-	HTim2.Init.Period = 4; // Freq_int = Ck_CNT / (1 + Period)
+	HTim2.Init.Prescaler = 999; // Ck_CNT = (Clock 100/2) / (1 + Preescaler)
+	HTim2.Init.Period = 49; // Freq_int = Ck_CNT / (1 + Period)
+
 
 	// Enable the interrupt.
-	HAL_NVIC_SetPriority(TIM2_IRQn, 0, 10);
+	HAL_NVIC_SetPriority(TIM2_IRQn, 0, 0);
 	HAL_NVIC_EnableIRQ(TIM2_IRQn);
+
 
 }
 

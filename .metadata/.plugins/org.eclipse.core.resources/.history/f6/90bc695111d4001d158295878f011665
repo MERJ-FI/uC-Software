@@ -1,5 +1,0 @@
-#include <Core/Inc/clock_mgr.h>
-#include <Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h>
-#include <Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h>
-
-

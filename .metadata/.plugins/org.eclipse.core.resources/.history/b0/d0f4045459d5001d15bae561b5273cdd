@@ -1,9 +1,0 @@
-/*
- * Clock.c
- *
- *  Created on: 6 abr 2023
- *      Author: mgnar
- */
-
-#include "stm32f1xx_hal_rcc_ex.h"
-#include "stm32f1xx_hal_rcc.h"
