@@ -5,4 +5,9 @@
  *      Author: mgnar
  */
 
+#include "Rx_Sec_Pol.h"
 
+void Rx_Sec_Pol (void)
+{
+
+}

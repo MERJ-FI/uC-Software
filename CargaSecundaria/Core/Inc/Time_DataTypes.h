@@ -9,7 +9,7 @@
 #define INC_TIME_DATATYPES_H_
 
 // Time base selected for the tasks execution
-#define interruptPeriodInUS 1000U
+#define interruptPeriodInUS 500U
 #define FALSE 0U
 #define TRUE 1U
 typedef unsigned char boolean;

@@ -8,6 +8,6 @@
 #ifndef INC_FORMATEO_H_
 #define INC_FORMATEO_H_
 
-
+void Formateo (void);
 
 #endif /* INC_FORMATEO_H_ */

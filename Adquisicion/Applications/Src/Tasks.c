@@ -10,30 +10,39 @@
 #include "Tasks.h"
 #include "Time.h"
 #include "Scheduler.h"
+#include "Rx_Sec_Pol.h"
+#include "Rx_Pri_Pol.h"
+#include "Rx_Interfaz_Pol.h"
+#include "Tx_Interfaz_Pol.h"
+#include "Formateo.h"
+#include "Control_Datos.h"
+#include "Idle.h"
+
 static volatile float timeLapse = 0;
 
-void SchM_ReadGPIOs_Task(void)
+void Read_Task(void)
 {
-	//HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_3);
+	Rx_Pri_Pol();
+	Rx_Sec_Pol();
+	Rx_Interfaz_Pol();
 }
 
-void SchM_Processing_Task(void)
+void Processing_Task(void)
 {
-	//HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_3);
+	Formateo();
+	Control_Datos();
 }
-void SchM_Executing_Task(void)
+void Executing_Task(void)
 {
-	//HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_3);
+	Tx_Interfaz_Pol();
 }
 
 void Idle_Task(void)
 {
 
-	//STATUS PIN, need to manually input.
-	HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_3);
+	Idle();
 
-	//STATUS PIN, need to manually input.
-
+	// End of execution, retrieve time since channel started.
 	timeLapse = TIME_GetTimeSinceChannelStarted(0u);
 
 	// Restart the execution of the tasks.
@@ -46,13 +55,13 @@ void TaskInit(void)
 {
 	SchM_Task_Create(SCHM_TASKID_READGPIOS, SCHM_MASK_READGPIOS,
 			SCHM_OFFSET_READGPIOS, SCHM_TASK_STATE_SUSPENDED,
-			SchM_ReadGPIOs_Task);
+			Read_Task);
 	SchM_Task_Create(SCHM_TASKID_PROCESSING, SCHM_MASK_PROCESSING,
 			SCHM_OFFSET_PROCESSING, SCHM_TASK_STATE_SUSPENDED,
-			SchM_Processing_Task);
+			Processing_Task);
 	SchM_Task_Create(SCHM_TASKID_EXECUTING, SCHM_MASK_EXECUTING,
 			SCHM_OFFSET_EXECUTING, SCHM_TASK_STATE_SUSPENDED,
-			SchM_Executing_Task);
+			Executing_Task);
 	SchM_Task_Create(SCHM_TASKID_IDLE, SCHM_MASK_IDLE, SCHM_OFFSET_IDLE,
 			SCHM_TASK_STATE_SUSPENDED, Idle_Task);
 }

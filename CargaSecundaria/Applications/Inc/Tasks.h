@@ -9,6 +9,9 @@
 #define INC_TASKS_H_
 
 // Tasks prototypes, more can be added here (don't forget to change Scheduler.h tasks value)
+void Read_Task (void);
+void Processing_Task (void);
+void Executing_Task (void);
 void Idle_Task(void);
 
 void TaskInit(void);

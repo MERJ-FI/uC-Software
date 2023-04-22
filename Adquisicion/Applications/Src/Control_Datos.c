@@ -5,4 +5,9 @@
  *      Author: mgnar
  */
 
+#include "Control_Datos.h"
 
+void Control_Datos (void)
+{
+
+}

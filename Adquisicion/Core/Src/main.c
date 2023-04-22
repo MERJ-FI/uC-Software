@@ -29,8 +29,11 @@ void Init(void);
 int main(void)
 {
 	Init();
-	//while (1)
 
+	while (1)
+		{
+
+		}
 
 }
 

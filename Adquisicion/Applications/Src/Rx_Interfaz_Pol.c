@@ -6,3 +6,9 @@
  */
 
 
+#include "Rx_Interfaz_Pol.h"
+
+void Rx_Interfaz_Pol (void)
+{
+
+}

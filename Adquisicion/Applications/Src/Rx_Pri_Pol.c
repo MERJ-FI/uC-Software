@@ -5,4 +5,9 @@
  *      Author: mgnar
  */
 
+#include "Rx_Pri_Pol.h"
 
+void Rx_Pri_Pol (void)
+{
+
+}

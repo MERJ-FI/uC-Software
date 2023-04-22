@@ -45,8 +45,8 @@ void CM_Init(void)
 
 	// Config tim 2 for interrupts.
 	HTim2.Instance = TIM2;
-	HTim2.Init.Prescaler = 999; // Ck_CNT = (Clock 100/2) / (1 + Preescaler)
-	HTim2.Init.Period = 49; // Freq_int = Ck_CNT / (1 + Period)
+	HTim2.Init.Prescaler = 999; // Ck_CNT = (Clock 64/2) / (1 + Preescaler)
+	HTim2.Init.Period = 15; // Freq_int = Ck_CNT / (1 + Period)
 
 
 	// Enable the interrupt.

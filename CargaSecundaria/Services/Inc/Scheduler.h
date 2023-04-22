@@ -11,7 +11,7 @@
 #include "Scheduler_DataTypes.h"
 
 #define Channel_01    0u
-#define NUMBEROFTASKS  1u
+#define NUMBEROFTASKS  4u
 
 void SchM_Init (void);
 void SchM_Start (void);
