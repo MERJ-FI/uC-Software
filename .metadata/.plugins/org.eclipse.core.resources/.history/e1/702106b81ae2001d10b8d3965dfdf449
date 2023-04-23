@@ -1,0 +1,41 @@
+/*
+ * PWM.c
+ *
+ *  Created on: 6 abr 2023
+ *      Author: mgnar
+ */
+
+#include "stm32f4xx_hal.h"
+#include "PWM.h"
+
+TIM_HandleTypeDef HTim11 =
+{ 0 };
+
+uint8_t initPWM(void)
+{
+	HTim11.Instance = TIM11;
+	HTim11.Init.CounterMode = TIM_COUNTERMODE_UP;
+	HTim11.Init.Prescaler = 34; // Ck_CNT = Ck_PSC / (1 + Preescaler)
+	HTim11.Init.Period = 127;  // Freq_int = Ck_CNT / (1 + Period)
+	__HAL_RCC_TIM11_CLK_ENABLE();
+
+	if (HAL_TIM_PWM_Init(&HTim11) != HAL_OK)
+		ErrorHandler();
+
+	// Canal 1.
+	TIM_OC_InitTypeDef TimCh1 =
+	{ 0 };
+	TimCh1.OCPolarity = TIM_OCPOLARITY_HIGH;
+	TimCh1.OCMode = TIM_OCMODE_PWM1;
+	TimCh1.Pulse = 0;
+
+	if (HAL_TIM_PWM_ConfigChannel(&HTim11, &TimCh1, TIM_CHANNEL_1) != HAL_OK)
+		ErrorHandler();
+
+	HAL_TIM_PWM_Start(&HTim11, TIM_CHANNEL_1);
+}
+
+void setPWM(uint8_t value)
+{
+	__HAL_TIM_SET_COMPARE(&HTim11, TIM_CHANNEL_1, value);
+}

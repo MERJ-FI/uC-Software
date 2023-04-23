@@ -22,6 +22,9 @@
 #include "gpio.h"
 #include "Scheduler.h"
 #include "Tasks.h"
+#include "SPI.h"
+#include "ADC.h"
+#include "PWM.h"
 
 void Init(void);
 
@@ -53,6 +56,30 @@ void Init(void)
 
 	// Init GPIOs.
 	GPIOInit();
+
+	// Init SPI.
+	error = initSPI();
+
+	if (error != 0)
+	{
+		Error_Handler();
+	}
+
+	// Init ADC.
+	error = initADC();
+
+	if (error != 0)
+	{
+		Error_Handler();
+	}
+
+	// Init PWM.
+	error = initPWM();
+
+	if (error != 0)
+	{
+		Error_Handler();
+	}
 
 	// Initialize tasks module
 	TaskInit();

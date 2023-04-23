@@ -22,7 +22,8 @@
 #include "gpio.h"
 #include "Scheduler.h"
 #include "Tasks.h"
-
+#include "UART.h"
+#include "SPI.h"
 
 void Init(void);
 
@@ -31,47 +32,56 @@ int main(void)
 	Init();
 
 	while (1)
-		{
+	{
 
-		}
+	}
 
 }
-
 
 void Init(void)
 {
 	uint8_t error = 0;
 
-
-
 	// Init clock peripheral.
 	error = SystemClock_Config();
-	// Check for error in clock init.
+
 	if (error != 0)
 	{
 		Error_Handler();
 	}
 
 	// Init HAL mechanism.
-		HAL_Init();
+	HAL_Init();
 
 	// Init GPIOs.
 	GPIOInit();
 
+	// Init UART.
+	error = initUART();
+
+	if (error != 0)
+	{
+		Error_Handler();
+	}
+
+	// Init SPI.
+	error = initSPI();
+
+	if (error != 0)
+	{
+		Error_Handler();
+	}
+
 
 	// Initialize tasks module
-
 	TaskInit();
 
-
 	// Init scheduler parameters
-
 	SchM_Init();
 
 	// Start the scheduler
 	SchM_Start();
 }
-
 
 /**
  * @brief  This function is executed in case of error occurrence.

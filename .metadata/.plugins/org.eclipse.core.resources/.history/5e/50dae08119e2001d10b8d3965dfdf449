@@ -1,0 +1,21 @@
+/*
+ * PWM.c
+ *
+ *  Created on: 6 abr 2023
+ *      Author: mgnar
+ */
+
+#include "stm32f4xx_hal.h"
+#include "PWM.h"
+
+TIM_HandleTypeDef HTim11 ={0};
+
+uint8_t initPWM(void)
+{
+
+}
+
+void setPWM(uint8_t value)
+{
+	__HAL_TIM_SET_COMPARE(&HTim11, TIM_CHANNEL_1, value);
+}

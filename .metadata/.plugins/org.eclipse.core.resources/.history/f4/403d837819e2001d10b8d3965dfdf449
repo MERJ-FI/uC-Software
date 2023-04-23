@@ -1,0 +1,19 @@
+/*
+ * PWM.c
+ *
+ *  Created on: 6 abr 2023
+ *      Author: mgnar
+ */
+
+#include "stm32f4xx_hal.h"
+#include "PWM.h"
+
+uint8_t initPWM(void)
+{
+
+}
+
+void setPWM(uint8_t value)
+{
+
+}

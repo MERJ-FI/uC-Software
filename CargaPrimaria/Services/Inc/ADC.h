@@ -8,6 +8,7 @@
 #ifndef INC_ADC_H_
 #define INC_ADC_H_
 
-
+uint8_t initADC(void);
+double readADC(void);
 
 #endif /* INC_ADC_H_ */

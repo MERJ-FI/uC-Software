@@ -1,0 +1,20 @@
+/*
+ * ADC.c
+ *
+ *  Created on: 6 abr 2023
+ *      Author: mgnar
+ */
+#include "stm32f4xx_hal.h"
+#include "ADC.h"
+
+ADC_HandleTypeDef HADC1 = {0};
+
+void initADC(void)
+{
+
+}
+
+double readADC(void)
+{
+
+}
